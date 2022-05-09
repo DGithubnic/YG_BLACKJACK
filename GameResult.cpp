@@ -9,6 +9,7 @@ void GameResult()
 		Player[Count] = Deck[i + 1];
 
 		cout << Count + 1 << "번째 카드 드로우!!" << endl;
+		cout << endl;
 		cout << "Dealer : ";
 		ShowCard(Dealer[Count]);
 		cout << '\n' << "Player : ";
@@ -38,34 +39,37 @@ void GameResult()
 		}
 
 		cout << "Dealer Score : " << ResultD + Count << endl;
-		cout << "Player Score : " << ResultP + Count << endl;
+		cout << "Player Score : " << ResultP + Count << "\n" << endl;
 
-		if (ResultD + Count > 21 && ResultP + Count > 21)
+		if (Count == 3)
 		{
-			cout << "Draw!!" << endl;
-			i = MAX;
-		}
+			if (ResultD + Count > 21 && ResultP + Count > 21)
+			{
+				cout << "Draw!!" << endl;
+				i = MAX;
+			}
 
-		else if (ResultD + Count > 21)
-		{
-			cout << "Player Win!!" << endl;
-			i = MAX;
-		}
+			else if (ResultD + Count > 21)
+			{
+				cout << "Player Win!!" << endl;
+				i = MAX;
+			}
 
-		else if (ResultP + Count > 21)
-		{
-			cout << "Dealer Win!!" << endl;
-			i = MAX;
-		}
+			else if (ResultP + Count > 21)
+			{
+				cout << "Dealer Win!!" << endl;
+				i = MAX;
+			}
 
-		else if (ResultP >= ResultD)
-		{
-			cout << "Player Win!!" << endl;
-		}
+			else if (ResultP >= ResultD)
+			{
+				cout << "Player Win!!" << endl;
+			}
 
-		else
-		{
-			cout << "Dealer Win!!" << endl;
+			else
+			{
+				cout << "Dealer Win!!" << endl;
+			}
 		}
 
 		ResultD = 0;

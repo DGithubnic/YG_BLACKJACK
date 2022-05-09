@@ -18,6 +18,8 @@ int main(void)
 
 	GameStart();
 
+	cout << endl;
+
 	GameResult();
 
 
